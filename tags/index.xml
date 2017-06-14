@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tkk</title>
-    <link>http://example.org/tags/</link>
+    <link>//binlaniua.github.io/tags/</link>
     <description>Recent content in Tags on Tkk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Jun 2017 17:21:50 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//binlaniua.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Datasource</title>
-      <link>http://example.org/tags/datasource/</link>
+      <link>//binlaniua.github.io/tags/datasource/</link>
       <pubDate>Wed, 14 Jun 2017 17:21:50 +0800</pubDate>
       
-      <guid>http://example.org/tags/datasource/</guid>
+      <guid>//binlaniua.github.io/tags/datasource/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>http://example.org/tags/go/</link>
+      <link>//binlaniua.github.io/tags/go/</link>
       <pubDate>Wed, 14 Jun 2017 17:34:13 +0800</pubDate>
       
-      <guid>http://example.org/tags/go/</guid>
+      <guid>//binlaniua.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Springboot</title>
-      <link>http://example.org/tags/springboot/</link>
+      <link>//binlaniua.github.io/tags/springboot/</link>
       <pubDate>Wed, 14 Jun 2017 17:29:32 +0800</pubDate>
       
-      <guid>http://example.org/tags/springboot/</guid>
+      <guid>//binlaniua.github.io/tags/springboot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swagger</title>
-      <link>http://example.org/tags/swagger/</link>
+      <link>//binlaniua.github.io/tags/swagger/</link>
       <pubDate>Wed, 14 Jun 2017 17:29:32 +0800</pubDate>
       
-      <guid>http://example.org/tags/swagger/</guid>
+      <guid>//binlaniua.github.io/tags/swagger/</guid>
       <description></description>
     </item>
     

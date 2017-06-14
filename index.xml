@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tkk</title>
-    <link>http://example.org/</link>
+    <link>//binlaniua.github.io/</link>
     <description>Recent content on Tkk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 14 Jun 2017 17:34:13 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//binlaniua.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Go Context使用</title>
-      <link>http://example.org/post/go/context/</link>
+      <link>//binlaniua.github.io/post/go/context/</link>
       <pubDate>Wed, 14 Jun 2017 17:34:13 +0800</pubDate>
       
-      <guid>http://example.org/post/go/context/</guid>
+      <guid>//binlaniua.github.io/post/go/context/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go 如何优雅重启应用</title>
-      <link>http://example.org/post/go/graceful-restart/</link>
+      <link>//binlaniua.github.io/post/go/graceful-restart/</link>
       <pubDate>Wed, 14 Jun 2017 17:33:09 +0800</pubDate>
       
-      <guid>http://example.org/post/go/graceful-restart/</guid>
+      <guid>//binlaniua.github.io/post/go/graceful-restart/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Go 如何处理错误</title>
-      <link>http://example.org/post/go/error/</link>
+      <link>//binlaniua.github.io/post/go/error/</link>
       <pubDate>Wed, 14 Jun 2017 17:32:11 +0800</pubDate>
       
-      <guid>http://example.org/post/go/error/</guid>
+      <guid>//binlaniua.github.io/post/go/error/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SpringBoot 集成swagger</title>
-      <link>http://example.org/post/java/springboot-swagger2/</link>
+      <link>//binlaniua.github.io/post/java/springboot-swagger2/</link>
       <pubDate>Wed, 14 Jun 2017 17:29:32 +0800</pubDate>
       
-      <guid>http://example.org/post/java/springboot-swagger2/</guid>
+      <guid>//binlaniua.github.io/post/java/springboot-swagger2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SpringBoot 自定义配置</title>
-      <link>http://example.org/post/java/springboot-custom-configuration/</link>
+      <link>//binlaniua.github.io/post/java/springboot-custom-configuration/</link>
       <pubDate>Wed, 14 Jun 2017 17:27:13 +0800</pubDate>
       
-      <guid>http://example.org/post/java/springboot-custom-configuration/</guid>
+      <guid>//binlaniua.github.io/post/java/springboot-custom-configuration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SpringBoot 多数据源配置</title>
-      <link>http://example.org/post/java/springboot-multi-datasource/</link>
+      <link>//binlaniua.github.io/post/java/springboot-multi-datasource/</link>
       <pubDate>Wed, 14 Jun 2017 17:21:50 +0800</pubDate>
       
-      <guid>http://example.org/post/java/springboot-multi-datasource/</guid>
+      <guid>//binlaniua.github.io/post/java/springboot-multi-datasource/</guid>
       <description></description>
     </item>
     
     <item>
       <title>关于我</title>
-      <link>http://example.org/about/</link>
+      <link>//binlaniua.github.io/about/</link>
       <pubDate>Wed, 14 Jun 2017 16:43:16 +0800</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>//binlaniua.github.io/about/</guid>
       <description> 个人信息  工作年限：8年+ GitHub：https://github.com/binlaniua 个人评价：  快速编码能力 问题定位能力 提供解决方案   技能清单  前端  Angular 1 react react natvie  后端  java golang  大数据  elasticsearch jstrom  其他  nginx + lua 熟练WEB攻防 精通http协议   </description>
     </item>
     
