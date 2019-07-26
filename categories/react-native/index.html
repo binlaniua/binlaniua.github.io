@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tags | Tkk</title>
-    <meta property="og:title" content="Tags - Tkk">
+    <title>react-native | Tkk</title>
+    <meta property="og:title" content="react-native - Tkk">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="react native, react, vue, java, go, 软件架构,公众号,小程序">
-    <meta name="description" content="Tags">
+    <meta name="description" content="react-native">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://binlaniua.github.io/tags/">
+    <meta property="og:url" content="http://binlaniua.github.io/categories/react-native/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="http://binlaniua.github.io/tags/index.xml" title="Tkk" />
+    <link rel="alternate" type="application/rss+xml+xml" href="http://binlaniua.github.io/categories/react-native/index.xml" title="Tkk" />
     <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 
     
@@ -75,53 +75,49 @@
         <div class="col-group">
 
             <div class="col-8" id="main">
-                <header>
+                <div class="res-cons">
                     
-                        <h1>共有3个标签</h1>
+                    <h3 class="archive-title">
+                        分类
+                        <span class="keyword">react-native</span>
+                        中的文章
+                    </h3>
                     
-                </header>
-                <div class="post-archive">
+
                     
-                    <h2><a href="http://binlaniua.github.io/tags/docker">docker</a> (2)</h2>
-                    <ul class="listing">
-                        
-                        <li>
-                            <span class="date">2019/07/26</span>
-                            <a href="http://binlaniua.github.io/post/docker/mysql/" title="docker ) mysql">docker ) mysql</a>
-                        </li>
-                        
-                        <li>
-                            <span class="date">2019/07/26</span>
-                            <a href="http://binlaniua.github.io/post/docker/shadowsocks/" title="docker ) shadowsocks">docker ) shadowsocks</a>
-                        </li>
-                        
-                    </ul>
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="http://binlaniua.github.io/post/react-native/photos/">react native 中 gif 只有第一帧</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年7月26日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://binlaniua.github.io/categories/react-native">react-native</a>
+                                
+                                    <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                原因 在做图片上传的时候, 我们有可能需要上传 gif, 或者高清大图, 但是 rn 的 CameraRoll 返回只是 gif 的第一帧, 无法使用
+方案 react-native-photos-framework
+安装 npm install --save binlaniua/react-native-photos-framework  封装一个 ts import RNPhotosFramework from &quot;react-native-photos-framework&quot;; export interface IImagePage { page: string; imageList: Array&lt;IImage&gt;; } export interface IImage { width: number; //图片宽度 height: number; //图片高度 uri: string; //url?_高度_宽度 type: string; //类型 originUri: string; //原始图片 } const cameraApi = { /** * @param page 第几页 * @param size 一页几个 */ async photos(page: any, size: number): Promise&lt;IImagePage&gt; { const result = await RNPhotosFramework.……
+                                <p class="readmore"><a href="http://binlaniua.github.io/post/react-native/photos/">阅读全文</a></p>
+                            </div>
+                        </article>
                     
-                    <h2><a href="http://binlaniua.github.io/tags/react-native">react-native</a> (2)</h2>
-                    <ul class="listing">
-                        
-                        <li>
-                            <span class="date">2019/07/26</span>
-                            <a href="http://binlaniua.github.io/post/react-native/photos/" title="react native 中 gif 只有第一帧">react native 中 gif 只有第一帧</a>
-                        </li>
-                        
-                        <li>
-                            <span class="date">2019/07/26</span>
-                            <a href="http://binlaniua.github.io/post/problem/1/" title="error: Unable to resolve build file: XCBCore.BuildFile">error: Unable to resolve build file: XCBCore.BuildFile</a>
-                        </li>
-                        
-                    </ul>
+
                     
-                    <h2><a href="http://binlaniua.github.io/tags/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a> (1)</h2>
-                    <ul class="listing">
-                        
-                        <li>
-                            <span class="date">2019/07/26</span>
-                            <a href="http://binlaniua.github.io/post/problem/1/" title="error: Unable to resolve build file: XCBCore.BuildFile">error: Unable to resolve build file: XCBCore.BuildFile</a>
-                        </li>
-                        
-                    </ul>
-                    
+
+
+
+
 
                 </div>
             </div>

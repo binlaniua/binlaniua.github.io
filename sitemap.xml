@@ -4,25 +4,48 @@
   
   <url>
     <loc>http://binlaniua.github.io/categories/</loc>
-    <lastmod>2019-07-26T16:46:38+08:00</lastmod>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://binlaniua.github.io/post/</loc>
-    <lastmod>2019-07-26T16:46:38+08:00</lastmod>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://binlaniua.github.io/tags/</loc>
-    <lastmod>2019-07-26T16:46:38+08:00</lastmod>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://binlaniua.github.io/</loc>
-    <lastmod>2019-07-26T16:46:38+08:00</lastmod>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://binlaniua.github.io/post/react-native/photos/</loc>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://binlaniua.github.io/categories/react-native/</loc>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://binlaniua.github.io/tags/react-native/</loc>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-07-26T18:21:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,18 +74,6 @@
   <url>
     <loc>http://binlaniua.github.io/post/problem/1/</loc>
     <lastmod>2019-07-26T16:29:25+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://binlaniua.github.io/tags/react-native/</loc>
-    <lastmod>2019-07-26T16:29:25+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2019-07-26T16:29:25+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
