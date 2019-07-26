@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react native on Tkk</title>
+    <link>http://binlaniua.github.io/tags/react-native/</link>
+    <description>Recent content in react native on Tkk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jul 2019 16:29:25 +0800</lastBuildDate>
+    
+	<atom:link href="http://binlaniua.github.io/tags/react-native/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>error: Unable to resolve build file: XCBCore.BuildFile</title>
+      <link>http://binlaniua.github.io/post/problem/1/</link>
+      <pubDate>Fri, 26 Jul 2019 16:29:25 +0800</pubDate>
+      
+      <guid>http://binlaniua.github.io/post/problem/1/</guid>
+      <description> 问题出现的原因 升级到 xcode10+以上编译之前的项目
+两种方式 1  关闭 xcode 的所有项目 退出然后重启 xcode XCode &amp;gt; Product &amp;gt; Clean Build Folder  2  关闭 xcode 的所有项目 cd ~/Library/Developer/Xcode/DerivedData 清空该目录 退出 xcode 重新打开 XCode &amp;gt; Product &amp;gt; Clean Build Folder  </description>
+    </item>
+    
+  </channel>
+</rss>

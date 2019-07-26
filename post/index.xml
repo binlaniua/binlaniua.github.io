@@ -1,68 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>博客 on Tkk</title>
-    <link>//binlaniua.github.io/post/</link>
-    <description>Recent content in 博客 on Tkk</description>
+    <title>Posts on Tkk</title>
+    <link>http://binlaniua.github.io/post/</link>
+    <description>Recent content in Posts on Tkk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jun 2017 16:43:16 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 16:46:38 +0800</lastBuildDate>
     
-	<atom:link href="//binlaniua.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://binlaniua.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Go Context使用</title>
-      <link>//binlaniua.github.io/post/go/context/</link>
-      <pubDate>Wed, 14 Jun 2017 17:34:13 +0800</pubDate>
+      <title>docker ) mysql</title>
+      <link>http://binlaniua.github.io/post/docker/mysql/</link>
+      <pubDate>Fri, 26 Jul 2019 16:46:38 +0800</pubDate>
       
-      <guid>//binlaniua.github.io/post/go/context/</guid>
-      <description></description>
+      <guid>http://binlaniua.github.io/post/docker/mysql/</guid>
+      <description>expost=端口号 \ logPath=日志目录 \ dataPath=数据目录 \ rootPass=root密码 \ docker \ run \ -p $expose:3306 \ -v $logPath:/logs \ -v $dataPath:/var/lib/mysql \ -e MYSQL_ROOT_PASSWORD=$rootPass \ --name mysql \ -d mysql:5.7  </description>
     </item>
     
     <item>
-      <title>Go 如何优雅重启应用</title>
-      <link>//binlaniua.github.io/post/go/graceful-restart/</link>
-      <pubDate>Wed, 14 Jun 2017 17:33:09 +0800</pubDate>
+      <title>docker ) shadowsocks</title>
+      <link>http://binlaniua.github.io/post/docker/shadowsocks/</link>
+      <pubDate>Fri, 26 Jul 2019 16:46:38 +0800</pubDate>
       
-      <guid>//binlaniua.github.io/post/go/graceful-restart/</guid>
-      <description></description>
+      <guid>http://binlaniua.github.io/post/docker/shadowsocks/</guid>
+      <description>method=加密类型[aes-256-cfb] \ pass=密码 \ port=对外端口 \ docker \ run \ -dt \ -p $port:6443 \ -s &amp;quot;-s 0.0.0.0 -p 6443 -m $method -k $pass --fast-open&amp;quot; --name ss \ mritd/shadowsocks  </description>
     </item>
     
     <item>
-      <title>Go 如何处理错误</title>
-      <link>//binlaniua.github.io/post/go/error/</link>
-      <pubDate>Wed, 14 Jun 2017 17:32:11 +0800</pubDate>
+      <title>error: Unable to resolve build file: XCBCore.BuildFile</title>
+      <link>http://binlaniua.github.io/post/problem/1/</link>
+      <pubDate>Fri, 26 Jul 2019 16:29:25 +0800</pubDate>
       
-      <guid>//binlaniua.github.io/post/go/error/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SpringBoot 集成swagger</title>
-      <link>//binlaniua.github.io/post/java/springboot-swagger2/</link>
-      <pubDate>Wed, 14 Jun 2017 17:29:32 +0800</pubDate>
-      
-      <guid>//binlaniua.github.io/post/java/springboot-swagger2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SpringBoot 自定义配置</title>
-      <link>//binlaniua.github.io/post/java/springboot-custom-configuration/</link>
-      <pubDate>Wed, 14 Jun 2017 17:27:13 +0800</pubDate>
-      
-      <guid>//binlaniua.github.io/post/java/springboot-custom-configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SpringBoot 多数据源配置</title>
-      <link>//binlaniua.github.io/post/java/springboot-multi-datasource/</link>
-      <pubDate>Wed, 14 Jun 2017 17:21:50 +0800</pubDate>
-      
-      <guid>//binlaniua.github.io/post/java/springboot-multi-datasource/</guid>
-      <description></description>
+      <guid>http://binlaniua.github.io/post/problem/1/</guid>
+      <description> 问题出现的原因 升级到 xcode10+以上编译之前的项目
+两种方式 1  关闭 xcode 的所有项目 退出然后重启 xcode XCode &amp;gt; Product &amp;gt; Clean Build Folder  2  关闭 xcode 的所有项目 cd ~/Library/Developer/Xcode/DerivedData 清空该目录 退出 xcode 重新打开 XCode &amp;gt; Product &amp;gt; Clean Build Folder  </description>
     </item>
     
   </channel>
