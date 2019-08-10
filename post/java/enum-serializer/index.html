@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>react native 中 gif 只有第一帧 | Tkk</title>
-    <meta property="og:title" content="react native 中 gif 只有第一帧 - Tkk">
+    <title>优雅的使用jackson去序列化枚举 | Tkk</title>
+    <meta property="og:title" content="优雅的使用jackson去序列化枚举 - Tkk">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-07-26T18:21:48&#43;08:00">
+    <meta property="article:published_time" content="2019-08-10T19:49:46&#43;08:00">
         
         
-    <meta property="article:modified_time" content="2019-07-26T18:21:48&#43;08:00">
+    <meta property="article:modified_time" content="2019-08-10T19:49:46&#43;08:00">
         
     <meta name="Keywords" content="react native, react, vue, java, go, 软件架构,公众号,小程序">
-    <meta name="description" content="react native 中 gif 只有第一帧">
+    <meta name="description" content="优雅的使用jackson去序列化枚举">
         
     <meta name="author" content="">
-    <meta property="og:url" content="http://binlaniua.github.io/post/react-native/photos/">
+    <meta property="og:url" content="http://binlaniua.github.io/post/java/enum-serializer/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
@@ -82,16 +82,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">react native 中 gif 只有第一帧</h1>
+                            <h1 class="post-title">优雅的使用jackson去序列化枚举</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年7月26日
+                            2019年8月10日
                         </date>
                         
                         <div class="post-meta">
                             <span>|</span>
                             
-                                <span class="meta-category"><a href="http://binlaniua.github.io/categories/react-native">react-native</a></span>
+                                <span class="meta-category"><a href="http://binlaniua.github.io/categories/java">java</a></span>
                             
                                 <span class="meta-category"><a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a></span>
                             
@@ -104,74 +104,138 @@
 
 <h2 id="原因">原因</h2>
 
-<p>在做图片上传的时候, 我们有可能需要上传 gif, 或者高清大图, 但是 rn 的 CameraRoll 返回只是 gif 的第一帧, 无法使用</p>
+<p>我们经常用枚举来标识各种状态和类型, 但是有时候又需要给这个枚举加一个中文名, 比如如下这个例子</p>
 
-<h2 id="方案">方案</h2>
-
-<p><a href="https://github.com/olofd/react-native-photos-framework">react-native-photos-framework</a></p>
-
-<h2 id="安装">安装</h2>
-
-<pre><code class="language-javascrpt">npm install --save binlaniua/react-native-photos-framework
+<pre><code class="language-java">public enum Sex {
+    Man,
+    Woman;
+}
+@Data
+@AllArgsConstructor
+public class Person {
+    private String name;
+    private Sex sex;
+}
 </code></pre>
 
-<h2 id="封装一个-ts">封装一个 ts</h2>
+<p>实例一个对象并且用jackson去序列化</p>
 
-<pre><code class="language-javascript">import RNPhotosFramework from &quot;react-native-photos-framework&quot;;
+<pre><code class="language-java">Person person = new Person(&quot;tkk&quot;, Sex.Man);
+打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;}
+</code></pre>
 
-export interface IImagePage {
-    page: string;
-    imageList: Array&lt;IImage&gt;;
-}
-export interface IImage {
-    width: number; //图片宽度
-    height: number; //图片高度
-    uri: string; //url?_高度_宽度
-    type: string; //类型
-    originUri: string; //原始图片
-}
+<h2 id="加强枚举">加强枚举</h2>
 
-const cameraApi = {
-    /**
-     * @param page 第几页
-     * @param size 一页几个
-     */
-    async photos(page: any, size: number): Promise&lt;IImagePage&gt; {
-        const result = await RNPhotosFramework.getAssets({
-            startIndex: page * size,
-            endIndex: (page + 1) * size - 1,
-            includeResourcesMetadata: true,
-            prepareForSizeDisplay: { width: 125, height: 125 },
-            fetchOptions: {
-                mediaTypes: [&quot;image&quot;],
-                sourceTypes: [&quot;userLibrary&quot;],
-                sortDescriptors: [
-                    {
-                        key: &quot;creationDate&quot;,
-                        ascending: false
-                    }
-                ]
-            }
-        });
-        let imageList = result.assets.map((o: any) =&gt; {
-            return {
-                uri: `${o.uri}?_${o.width}_${o.height}`,
-                width: o.width,
-                height: o.height,
-                type: o.resourcesMetadata[0].fileExtension.toLocaleLowerCase(),
-                originUri: `photos://${o.resourcesMetadata[0].assetLocalIdentifier}`
-            };
-        });
-        return { page: page + 1, imageList };
+<pre><code class="language-java">public enum Sex {
+    Man(&quot;男人&quot;),
+    Woman(&quot;女人&quot;);
+    
+    @Getter
+    private String text;
+
+    Sex(String text) {
+        this.text = text;
     }
-};
-
-export default cameraApi;
+}
 </code></pre>
 
-<h2 id="引用">引用</h2>
+<p>再次运行实例, 发现还是打印如下, 那么如何能显示我们里面定义的text呢</p>
 
-<pre><code class="language-javascript">await cameraApi.photos(0, 5);
+<pre><code class="language-java">Person person = new Person(&quot;tkk&quot;, Sex.Man);
+打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;}
+</code></pre>
+
+<h2 id="自定义序列化">自定义序列化</h2>
+
+<pre><code class="language-java">public class SexSerializer extends StdSerializer&lt;Sex&gt; {
+    public SexSerializer() {
+        super(Sex.class);
+    }
+    @Override
+    public void serialize(Sex sex, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+        jsonGenerator.writeString(sex.name());
+        jsonGenerator.writeStringField(&quot;text&quot;, sex.getText());
+    }
+}
+</code></pre>
+
+<p>并且把这个序列化加到Sex枚举上</p>
+
+<pre><code class="language-java">@JsonSerialize(using = SexSerializer.class)
+public enum Sex {}
+</code></pre>
+
+<p>再次运行实例, 可以看到可以看到我们自定义的属性</p>
+
+<pre><code class="language-java">Person person = new Person(&quot;tkk&quot;, Sex.Man);
+打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;,&quot;text&quot;:&quot;男人&quot;}
+</code></pre>
+
+<h2 id="难道我们每个枚举都要自定义一个序列化吗-no">难道我们每个枚举都要自定义一个序列化吗? No</h2>
+
+<pre><code class="language-java">public class EnumSerializer extends StdSerializer {
+
+    public static final String GET = &quot;get&quot;;
+
+    private static final class MethodDescriptor {
+        private Method method;
+        private String fieldName;
+    }
+
+    private static final Map&lt;Class, MethodDescriptor[]&gt; CLASS_MAP = new HashMap&lt;&gt;();
+
+    public EnumSerializer() {
+        super(Object.class);
+    }
+
+    @Override
+    public void serialize(Object o, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
+        // 写入枚举本身的值
+        Enum e = (Enum) o;
+        jsonGenerator.writeString(e.name());
+
+        // 获取前缀
+        String prefix = jsonGenerator.getOutputContext().getCurrentName();
+
+        // 获取枚举其他属性, 获取输出
+        for (MethodDescriptor methodDescriptor : CLASS_MAP.computeIfAbsent(o.getClass(), EnumSerializer::description)) {
+            jsonGenerator.writeObjectField(
+                    prefix + methodDescriptor.fieldName,
+                    ReflectionUtils.invokeMethod(methodDescriptor.method, o)
+            );
+        }
+    }
+
+    private static synchronized MethodDescriptor[] description(Class aClass) {
+        if (CLASS_MAP.containsKey(aClass)) {
+            return CLASS_MAP.get(aClass);
+        }
+        List&lt;MethodDescriptor&gt; result = new ArrayList&lt;&gt;(aClass.getMethods().length);
+        ReflectionUtils.doWithLocalMethods(aClass, method -&gt; {
+            if (!StringUtils.startsWith(method.getName(), GET)) {
+                return;
+            }
+            MethodDescriptor methodDescriptor = new MethodDescriptor();
+            methodDescriptor.method = method;
+            methodDescriptor.fieldName = (StringUtils.substringAfter(method.getName(), GET));
+            result.add(methodDescriptor);
+        });
+        return result.toArray(new MethodDescriptor[result.size()]);
+    }
+
+}
+</code></pre>
+
+<p>并且把这个序列化加到Sex枚举上</p>
+
+<pre><code class="language-java">@JsonSerialize(using = EnumSerializer.class)
+public enum Sex {}
+</code></pre>
+
+<p>再次运行实例, 可以看到可以看到我们自定义的属性</p>
+
+<pre><code class="language-java">Person person = new Person(&quot;tkk&quot;, Sex.Man);
+打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;,&quot;sexText&quot;:&quot;男人&quot;} 
 </code></pre>
 
                         </div>
@@ -184,6 +248,8 @@ export default cameraApi;
 <div class="post-archive">
     <h2>See Also</h2>
     <ul class="listing">
+        
+        <li><a href="/post/react-native/photos/">react native 中 gif 只有第一帧</a></li>
         
         <li><a href="/post/docker/mysql/">docker ) mysql</a></li>
         
@@ -199,7 +265,7 @@ export default cameraApi;
                             
                             <ul class="clearfix">
                                 
-                                <li><a href="http://binlaniua.github.io/tags/react-native">react-native</a></li>
+                                <li><a href="http://binlaniua.github.io/tags/java">java</a></li>
                                 
                             </ul>
                             

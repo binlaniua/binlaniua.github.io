@@ -88,6 +88,34 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://binlaniua.github.io/post/java/enum-serializer/">优雅的使用jackson去序列化枚举</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年8月10日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://binlaniua.github.io/categories/java">java</a>
+                                
+                                    <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                原因 我们经常用枚举来标识各种状态和类型, 但是有时候又需要给这个枚举加一个中文名, 比如如下这个例子
+public enum Sex { Man, Woman; } @Data @AllArgsConstructor public class Person { private String name; private Sex sex; }  实例一个对象并且用jackson去序列化
+Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;}  加强枚举 public enum Sex { Man(&quot;男人&quot;), Woman(&quot;女人&quot;); @Getter private String text; Sex(String text) { this.text = text; } }  再次运行实例, 发现还是打印如下, 那么如何能显示我们里面定义的text呢
+Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&quot;:&quot;tkk&quot;,&quot;sex&quot;:&quot;Man&quot;}  自定义序列化 public class SexSerializer extends StdSerializer&lt;Sex&gt; { public SexSerializer() { super(Sex.……
+                                <p class="readmore"><a href="http://binlaniua.github.io/post/java/enum-serializer/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://binlaniua.github.io/post/react-native/photos/">react native 中 gif 只有第一帧</a>
                                 </h1>
                             </header>
@@ -161,6 +189,10 @@
 <ul class="widget-list">
     
     <li>
+        <a href="http://binlaniua.github.io/post/java/enum-serializer/" title="优雅的使用jackson去序列化枚举">优雅的使用jackson去序列化枚举</a>
+    </li>
+    
+    <li>
         <a href="http://binlaniua.github.io/post/react-native/photos/" title="react native 中 gif 只有第一帧">react native 中 gif 只有第一帧</a>
     </li>
     
@@ -190,11 +222,15 @@
     </li>
     
     <li>
+        <a href="http://binlaniua.github.io/categories/java/">java(1)</a>
+    </li>
+    
+    <li>
         <a href="http://binlaniua.github.io/categories/react-native/">react-native(1)</a>
     </li>
     
     <li>
-        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(2)</a>
+        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(3)</a>
     </li>
     
 </ul>
@@ -205,6 +241,8 @@
 <div class="tagcloud">
     
     <a href="http://binlaniua.github.io/tags/docker/">docker</a>
+    
+    <a href="http://binlaniua.github.io/tags/java/">java</a>
     
     <a href="http://binlaniua.github.io/tags/react-native/">react-native</a>
     

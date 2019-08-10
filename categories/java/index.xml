@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Tkk</title>
+    <link>http://binlaniua.github.io/categories/java/</link>
+    <description>Recent content in java on Tkk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Aug 2019 19:49:46 +0800</lastBuildDate>
+    
+	<atom:link href="http://binlaniua.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>优雅的使用jackson去序列化枚举</title>
+      <link>http://binlaniua.github.io/post/java/enum-serializer/</link>
+      <pubDate>Sat, 10 Aug 2019 19:49:46 +0800</pubDate>
+      
+      <guid>http://binlaniua.github.io/post/java/enum-serializer/</guid>
+      <description>原因 我们经常用枚举来标识各种状态和类型, 但是有时候又需要给这个枚举加一个中文名, 比如如下这个例子
+public enum Sex { Man, Woman; } @Data @AllArgsConstructor public class Person { private String name; private Sex sex; }  实例一个对象并且用jackson去序列化
+Person person = new Person(&amp;quot;tkk&amp;quot;, Sex.Man); 打印 ==&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;tkk&amp;quot;,&amp;quot;sex&amp;quot;:&amp;quot;Man&amp;quot;}  加强枚举 public enum Sex { Man(&amp;quot;男人&amp;quot;), Woman(&amp;quot;女人&amp;quot;); @Getter private String text; Sex(String text) { this.text = text; } }  再次运行实例, 发现还是打印如下, 那么如何能显示我们里面定义的text呢
+Person person = new Person(&amp;quot;tkk&amp;quot;, Sex.Man); 打印 ==&amp;gt; {&amp;quot;name&amp;quot;:&amp;quot;tkk&amp;quot;,&amp;quot;sex&amp;quot;:&amp;quot;Man&amp;quot;}  自定义序列化 public class SexSerializer extends StdSerializer&amp;lt;Sex&amp;gt; { public SexSerializer() { super(Sex.</description>
+    </item>
+    
+  </channel>
+</rss>
