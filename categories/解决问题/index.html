@@ -88,6 +88,31 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://binlaniua.github.io/post/java/delayqueue/">正确的使用 DelayQueue</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月2日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://binlaniua.github.io/categories/java">java</a>
+                                
+                                    <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                使用场景  下单后多少分钟未支付关闭订单 发货了多少天后未确认收货, 自动收货 确认收货后, 多少天后没问题，自动完成 等等需要动态的在某一个时间点处理一件事情  为什么不能轮训  每分钟查询一次, 不精确 每秒查询一次, 资源浪费  最佳实践 创建一个实体用来持久化延迟任务 @Data @Builder @NoArgsConstructor @AllArgsConstructor @Entity public class DelayTask implements Serializable, Delayed { @Id private String id; private String beanName; //当触发的时候, 使用谁处理该任务 private Date fireTime; //触发时间 private String arguments; //参数, json格式 @Override public long getDelay(TimeUnit unit) { return unit.convert(this.fireTime.getTime() - System.currentTimeMillis(), TimeUnit.MILLISECONDS); } @Override public int compareTo(Delayed delayed) { DelayTask msg = (DelayTask) delayed; // 切记, 下面这行代码是有问题的 // 因为 getDelay是long类型, 2个时间如果间距很长, 相减会出现负数, 导致触发时间旧的排到了前面, 触发时间短的在后面 // 而DelayQueue内部是使用PriorityQueue优先级队列, 所以优先延迟等待触发时间旧的任务, 导致触发时间短的不触发 // return (int) (this.……
+                                <p class="readmore"><a href="http://binlaniua.github.io/post/java/delayqueue/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://binlaniua.github.io/post/java/enum-serializer/">优雅的使用jackson去序列化枚举</a>
                                 </h1>
                             </header>
@@ -189,6 +214,10 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
 <ul class="widget-list">
     
     <li>
+        <a href="http://binlaniua.github.io/post/java/delayqueue/" title="正确的使用 DelayQueue">正确的使用 DelayQueue</a>
+    </li>
+    
+    <li>
         <a href="http://binlaniua.github.io/post/java/enum-serializer/" title="优雅的使用jackson去序列化枚举">优雅的使用jackson去序列化枚举</a>
     </li>
     
@@ -222,7 +251,7 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
     </li>
     
     <li>
-        <a href="http://binlaniua.github.io/categories/java/">java(1)</a>
+        <a href="http://binlaniua.github.io/categories/java/">java(2)</a>
     </li>
     
     <li>
@@ -230,7 +259,7 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
     </li>
     
     <li>
-        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(3)</a>
+        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(4)</a>
     </li>
     
 </ul>
