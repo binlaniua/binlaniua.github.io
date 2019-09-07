@@ -88,6 +88,31 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="http://binlaniua.github.io/post/java/cors/">spring的cors为什么不起作用了?</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年9月7日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="http://binlaniua.github.io/categories/java">java</a>
+                                
+                                    <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                 先看看正常的配置 public class WebConfig extends WebMvcConfigurationSupport { public void addCorsMappings(CorsRegistry registry) { registry .addMapping(&quot;/**/*&quot;) .allowedOrigins(&quot;*&quot;) .allowedMethods(&quot;*&quot;) .allowedHeaders(&quot;*&quot;) .allowCredentials(true) ; } }  问题 当我们的接口返回异常, spring会foraward到error的controller 或者当我们定义了 @ControllerAdvice 这个, 那么会forward到这个里面 这时上面定义的会失效, 毕竟forward了, 之前的response里面放的数据都会被新的controller重置  如何解决(采用Filter的方式, 每次都会写入跨域响应) public class WebConfig extends WebMvcConfigurationSupport { @Bean public CorsFilter corsFilter() { final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); final CorsConfiguration config = new CorsConfiguration(); config.setAllowCredentials(true); config.setAllowedOrigins(Collections.singletonList(&quot;*&quot;)); config.setAllowedHeaders(Arrays.asList( &quot;*&quot; )); config.setAllowedMethods(Arrays.asList( &quot;*&quot; )); source.registerCorsConfiguration(&quot;/**&quot;, config); return new CorsFilter(source); } }  ……
+                                <p class="readmore"><a href="http://binlaniua.github.io/post/java/cors/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="http://binlaniua.github.io/post/java/delayqueue/">正确的使用 DelayQueue</a>
                                 </h1>
                             </header>
@@ -163,6 +188,10 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
 <ul class="widget-list">
     
     <li>
+        <a href="http://binlaniua.github.io/post/java/cors/" title="spring的cors为什么不起作用了?">spring的cors为什么不起作用了?</a>
+    </li>
+    
+    <li>
         <a href="http://binlaniua.github.io/post/java/delayqueue/" title="正确的使用 DelayQueue">正确的使用 DelayQueue</a>
     </li>
     
@@ -200,7 +229,7 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
     </li>
     
     <li>
-        <a href="http://binlaniua.github.io/categories/java/">java(2)</a>
+        <a href="http://binlaniua.github.io/categories/java/">java(3)</a>
     </li>
     
     <li>
@@ -208,7 +237,7 @@ Person person = new Person(&quot;tkk&quot;, Sex.Man); 打印 ==&gt; {&quot;name&
     </li>
     
     <li>
-        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(4)</a>
+        <a href="http://binlaniua.github.io/categories/%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98/">解决问题(5)</a>
     </li>
     
 </ul>
